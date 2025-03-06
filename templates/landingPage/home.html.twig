@@ -4,12 +4,8 @@
 
 {% block stylesheets %}
 <style>
-.block {
-    background-color: #f0f0f0;
-    padding: 16px;
-    text-align: center;
+.grid-container > * {
     border: 1px solid #ddd;
-    border-radius: 8px;
 }
 </style>
 {% endblock %}
@@ -19,13 +15,13 @@
     <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) top / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title">
-                <h1>Des <span class="">commerces</span> en plain coeur de zone 4</h1>
+                <h1>Des <span class="">commerces</span> en plein coeur de Zone 4</h1>
                 <p>Livraison : 2<sup>e</sup> semestre 2025</p>
             </div>
             <div class="carrousel__form-div">
                 <div>
                     <span>Développé par</span>
-                    <img src="" alt="">
+                    <img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45">
                 </div>
                 <form action="" method="post" class="carrousel__form">
                     <h3 class="carrousel__form-title">Nous vous répondons</h3>
