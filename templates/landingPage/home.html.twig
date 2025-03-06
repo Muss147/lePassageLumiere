@@ -4,9 +4,7 @@
 
 {% block stylesheets %}
 <style>
-.grid-container > * {
-    border: 1px solid #ddd;
-}
+    
 </style>
 {% endblock %}
 
@@ -18,15 +16,32 @@
                 <h1><span class="fw-100">Des </span>commerces <br><span class="fw-100">en plein coeur de Zone 4</span></h1>
                 <p>Livraison : 2<sup>e</sup> semestre 2025</p>
             </div>
-            <div class="carrousel__form-div">
+            <div class="carrousel__form-div d-flex-end">
                 <div>
-                    <span>Développé par</span>
-                    <img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45">
+                    <div class="d-flex-end mb-2">
+                        <span>Développé par</span>
+                        <img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45">
+                    </div>
+                    <form action="" method="post" class="carrousel__form">
+                        <span class="carrousel__form-title _font-reem-kufi-uniquifier">Nous vous répondons</span>
+                        <div class="input-container">
+                            <input type="text" required=""/>
+                            <label>Raison sociale</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" required=""/>
+                            <label>Nom & Prénom</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" required=""/>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" required=""/>
+                            <label>Télephone</label>
+                        </div>
+                    </form>
                 </div>
-                <form action="" method="post" class="carrousel__form">
-                    <h3 class="carrousel__form-title fw-lighter">Nous vous répondons</h3>
-
-                </form>
             </div>
         </div>
     </div>
