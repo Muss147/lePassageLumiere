@@ -8,6 +8,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class FrontController extends AbstractController
 {
+    public function header(): Response
+    {
+        return $this->render('landingPage/_header.html.twig');
+    }
+
     #[Route('/', name: 'app_front')]
     public function index(): Response
     {
