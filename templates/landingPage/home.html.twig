@@ -10,7 +10,7 @@
 
 {% block body %}
 <section id="accueil" class="carrousel">
-    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) top / cover no-repeat;">
+    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed center / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title pt-3">
                 <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
@@ -763,7 +763,7 @@
         <div class="accordeon active mb-3">
             <div class="accordeon-header">
                 <h3>Général</h3>
-                <span class="accordeon-icon">></span>
+                <span class="accordeon-header-icon">></span>
             </div>
             
             <div class="accordeon-cards general">
@@ -861,7 +861,7 @@
         <div class="accordeon">
             <div class="accordeon-header">
                 <h3>Commerces</h3>
-                <span class="accordeon-icon">></span>
+                <span class="accordeon-header-icon">></span>
             </div>
             
             <div class="accordeon-cards commerces">
@@ -875,8 +875,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg id="Groupe_1145" data-name="Groupe 1145" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="46.938" viewBox="0 0 57.643 46.938">
                                             <defs>
@@ -907,8 +907,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg id="Groupe_1146" data-name="Groupe 1146" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="44.736" viewBox="0 0 44.084 44.736">
                                             <defs>
@@ -941,8 +941,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg id="Groupe_1148" data-name="Groupe 1148" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="44.736" viewBox="0 0 51.648 44.736">
                                             <defs>
@@ -976,8 +976,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="31.135" viewBox="0 0 44.084 31.135">
                                             <defs>
@@ -1009,8 +1009,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg id="Groupe_1169" data-name="Groupe 1169" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="48.568" viewBox="0 0 41.354 48.568">
                                             <defs>
@@ -1044,8 +1044,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px;">
-                                <div style="display: flex; align-items: center; gap: 20px">
+                            <td>
+                                <div class="accordeon-cards-icones">
                                     <span class="icones">
                                         <svg id="Groupe_1174" data-name="Groupe 1174" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="43.848" viewBox="0 0 43.869 43.848">
                                             <defs>
@@ -1077,5 +1077,103 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section id="aboutPfo" class="aboutPfo">
+    <div class="container grid-container">
+        <div class="s4-text column__left">
+            <div class="">
+                <span class="title__prm">
+                    <svg id="Groupe_292" data-name="Groupe 292" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 50">
+                        <defs>
+                        <clipPath id="clip-path">
+                            <rect id="Rectangle_204" data-name="Rectangle 204" width="750.98" height="47.982" fill="none"/>
+                        </clipPath>
+                        </defs>
+                        <path id="Tracé_1521" data-name="Tracé 1521" d="M16.779,12.164h.288L33.895,47.308h-7.74L23.366,41.2H10.433L7.74,47.308H0Zm3.7-2.4H14.664L7.26,0h8.846Zm.673,26.25c-1.587-3.606-3.125-7.26-4.183-10.289-1.01,2.4-2.837,7.02-4.279,10.289Z"/>
+                        <path id="Tracé_1522" data-name="Tracé 1522" d="M193.007,70.131V81.958h-7.4V47.342h11.25c7.981,0,13.318,3.942,13.318,11.394s-5.337,11.394-13.318,11.394Zm0-16.587V63.881h4.231c3.221,0,5.433-1.683,5.433-5.144s-2.308-5.192-5.625-5.192Z" transform="translate(-135.842 -34.649)"/>
+                        <path id="Tracé_1523" data-name="Tracé 1523" d="M313.969,47.342c8.029,0,13.366,3.99,13.366,11.394a10.126,10.126,0,0,1-6.587,9.856l7.26,13.366h-7.837l-6.106-12.116h-5V81.958h-7.26V47.342Zm-4.9,6.2V63.881h5.289c3.269,0,5.529-1.635,5.529-5.144,0-3.461-2.356-5.192-5.721-5.192Z" transform="translate(-220.891 -34.649)"/>
+                        <path id="Tracé_1524" data-name="Tracé 1524" d="M435.957,44.831a17.982,17.982,0,1,1-18.125,17.981,17.747,17.747,0,0,1,18.125-17.981m0,29.183c6.25,0,10.673-5,10.673-11.2,0-6.154-4.423-11.2-10.673-11.2s-10.673,5.048-10.673,11.2c0,6.2,4.423,11.2,10.673,11.2" transform="translate(-305.809 -32.812)"/>
+                        <path id="Tracé_1525" data-name="Tracé 1525" d="M587.525,70.131V81.958h-7.4V47.342h11.25c7.981,0,13.317,3.942,13.317,11.394s-5.337,11.394-13.317,11.394Zm0-16.587V63.881h4.231c3.221,0,5.433-1.683,5.433-5.144s-2.308-5.192-5.625-5.192Z" transform="translate(-424.588 -34.649)"/>
+                        <path id="Tracé_1526" data-name="Tracé 1526" d="M710.682,44.831a17.982,17.982,0,1,1-18.125,17.981,17.748,17.748,0,0,1,18.125-17.981m0,29.183c6.25,0,10.673-5,10.673-11.2,0-6.154-4.423-11.2-10.673-11.2s-10.673,5.048-10.673,11.2c0,6.2,4.423,11.2,10.673,11.2" transform="translate(-506.879 -32.812)"/>
+                        <path id="Tracé_1527" data-name="Tracé 1527" d="M847.617,78.822V71.707a22.685,22.685,0,0,0,8.7,2.5,12.6,12.6,0,0,0,3.077-.193c2.644-.384,4.182-1.394,4.182-3.077,0-2.308-2.067-3.51-6.827-5.241-6.058-2.212-9.616-4.76-9.616-10.769,0-6.154,5.1-10.1,12.548-10.1a23.789,23.789,0,0,1,9.039,1.731v6.827a17.724,17.724,0,0,0-8.462-2.115c-3.558,0-5.866,1.394-5.866,3.606,0,2.019,1.875,3.414,6.587,5.192,6.058,2.356,9.808,4.9,9.808,10.721,0,6.25-4.712,10-12.885,10a27.006,27.006,0,0,1-10.288-1.971" transform="translate(-620.015 -32.812)"/>
+                        <path id="Tracé_1528" data-name="Tracé 1528" d="M1000.279,81.958V47.342h11.058c11.779,0,19.231,7.164,19.231,17.308s-7.4,17.308-19.135,17.308Zm7.4-28.414V75.756h3.654c7.4,0,11.779-4.808,11.779-11.106,0-6.25-4.375-11.106-11.875-11.106Z" transform="translate(-732.1 -34.649)"/>
+                        <path id="Tracé_1529" data-name="Tracé 1529" d="M1299.27,70.131V81.958h-7.4V47.342h11.25c7.981,0,13.317,3.942,13.317,11.394s-5.336,11.394-13.317,11.394Zm0-16.587V63.881h4.231c3.221,0,5.432-1.683,5.432-5.144s-2.307-5.192-5.625-5.192Z" transform="translate(-945.511 -34.649)"/>
+                        <path id="Tracé_1530" data-name="Tracé 1530" d="M1415.472,53.544v8.269h11.539v6.106h-11.539V81.958h-7.4V47.342h21.106v6.2Z" transform="translate(-1030.559 -34.649)"/>
+                        <path id="Tracé_1531" data-name="Tracé 1531" d="M1522.671,44.831a17.982,17.982,0,1,1-18.125,17.981,17.748,17.748,0,0,1,18.125-17.981m0,29.183c6.25,0,10.673-5,10.673-11.2,0-6.154-4.424-11.2-10.673-11.2S1512,56.658,1512,62.812c0,6.2,4.423,11.2,10.673,11.2" transform="translate(-1101.171 -32.812)"/>
+                        <rect id="Rectangle_201" data-name="Rectangle 201" width="7.404" height="34.616" transform="translate(457.319 12.693)"/>
+                        <path id="Tracé_1532" data-name="Tracé 1532" d="M1777.407,62.63l-1.827-1.587V80.515h-7.068V45.37h.144L1785.148,62l16.491-16.635h.144V80.515h-7.068V61.043l-1.827,1.587c-2.548,2.789-5.144,5.577-7.741,8.317-2.6-2.74-5.144-5.529-7.74-8.317" transform="translate(-1294.367 -33.206)"/>
+                        <path id="Tracé_1533" data-name="Tracé 1533" d="M1936.649,62.63l-1.827-1.587V80.515h-7.067V45.37h.145L1944.39,62l16.491-16.635h.144V80.515h-7.068V61.043l-1.827,1.587c-2.548,2.789-5.144,5.577-7.741,8.317-2.6-2.74-5.144-5.529-7.74-8.317" transform="translate(-1410.916 -33.206)"/>
+                        <path id="Tracé_1534" data-name="Tracé 1534" d="M2096.875,44.831a17.982,17.982,0,1,1-18.125,17.981,17.747,17.747,0,0,1,18.125-17.981m0,29.183c6.25,0,10.674-5,10.674-11.2,0-6.154-4.424-11.2-10.674-11.2s-10.673,5.048-10.673,11.2c0,6.2,4.424,11.2,10.673,11.2" transform="translate(-1521.428 -32.812)"/>
+                        <path id="Tracé_1535" data-name="Tracé 1535" d="M2266.425,71.862c0,6.635-5.385,10.1-13.173,10.1h-12.212V47.342h11.2c7.356,0,12.884,3.221,12.884,9.712a7.226,7.226,0,0,1-4.422,6.731,8.54,8.54,0,0,1,5.721,8.077m-13.9-10.1a10.371,10.371,0,0,0,2.79-.288,3.78,3.78,0,0,0,2.307-3.8c0-2.885-1.971-4.423-4.9-4.423h-4.615v8.51Zm-4.423,14.279h5.48c2.933,0,5.241-1.635,5.241-4.664s-2.116-4.615-4.759-4.615h-5.962Z" transform="translate(-1640.207 -34.649)"/>
+                        <rect id="Rectangle_202" data-name="Rectangle 202" width="7.404" height="34.616" transform="translate(633.669 12.693)"/>
+                        <path id="Tracé_1536" data-name="Tracé 1536" d="M2426.283,81.958V47.342h7.4V75.755H2447v6.2Z" transform="translate(-1775.786 -34.649)"/>
+                        <rect id="Rectangle_203" data-name="Rectangle 203" width="7.404" height="34.616" transform="translate(677.757 12.693)"/>
+                        <path id="Tracé_1537" data-name="Tracé 1537" d="M2715.506,47.342c8.029,0,13.366,3.99,13.366,11.394a10.126,10.126,0,0,1-6.587,9.856l7.26,13.366h-7.837L2715.6,69.842h-5V81.958h-7.26V47.342Zm-4.9,6.2V63.881h5.288c3.269,0,5.529-1.635,5.529-5.144,0-3.461-2.356-5.192-5.721-5.192Z" transform="translate(-1978.564 -34.649)"/>
+                        <path id="Tracé_1538" data-name="Tracé 1538" d="M1140.334,81.8v-34.8h20.122v6.236h-12.677v7.928h12.664v5.994h-12.664V75.56h12.677V81.8Z" transform="translate(-834.606 -34.393)"/>
+                        <path id="Tracé_1539" data-name="Tracé 1539" d="M2590.724,81.8v-34.8h20.121v6.236h-12.677v7.928h12.665v5.994h-12.665V75.56h12.677V81.8Z" transform="translate(-1896.14 -34.393)"/>
+                    </svg>
+                </span>
+                <div class="presentation__text-div">
+                    <p><b>PFO Immobilier</b>, fondée en 2019, est une <b>filiale du groupe PFO Africa Spécialisée dans des projets immobiliers</b> à forte valeur ajoutée.</p>
+
+                    <p><b>PFO Immobilier développe et gère</b> un portefeuille d’actifs immobiliers multisectoriel allant des bureaux et commerces à l’hôtellerie, l’industrie et le résidentiel.</p>
+                        
+                    <p>Grâce à notre <b>ancrage local</b> et notre <b>expertise régionale</b>, nous identifions précisément les besoins et développons des actifs innovants avec des partenaires internationaux de premier plan.</p>
+                        
+                    <p>De la conception à la gestion locative, <b>notre équipe pluridisciplinaire pilote chaque étape du développement immobilier</b>.</p>
+                        
+                    <p><i><b>Le groupe PFO Africa</b> exerce ses activités en Côte d’Ivoire depuis plus de 50 ans. Aujourd’hui, PFO Africa est présent dans six secteurs d’activité (construction, immobilier, énergie, etc.) et est dans 5 pays d’Afrique francophone.</i></p>
+                </div>
+            </div>
+        </div>
+        <div class="s4-map column__right" style="align-items: center">
+            <img alt="A propos de PFO" src="{{ asset('assets/medias/bg/aboutPFO.png') }}" height="400">
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact" style="background: url({{asset('assets/medias/bg/loader.png')}}) fixed center / cover no-repeat;">
+    <div class="container d-flex-center">
+        <div class="contact__text">
+            <p>Nous sommes à votre écoute.</p>
+            <p>Contactez nous !</p>
+            <p>
+                <a href="tel:002252722220665">+225 27 22 22 06 65</a><br>
+                <a href="mailto:contact@pfo-immobilier.com">contact@pfo-immobilier.com</a>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block javascripts %}
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const div = document.querySelector(".carrousel");
+    const divElemts = document.querySelector(".carrousel *");
+
+    window.addEventListener("scroll", function () {
+        // Récupérer la position de défilement de la fenêtre
+        let scrollTop = window.scrollY;
+        let divHeight = div.offsetHeight;
+        
+        // Calcul de l'opacité (0 à 1)
+        let opacity = 1 - (scrollTop / divHeight);
+        opacity = Math.max(0, Math.min(1, opacity)); // Assurer une valeur entre 0 et 1
+
+        // Appliquer l'opacité à tous les éléments de la div
+        divElemts.style.opacity = opacity;
+
+        // Appliquer l'opacité à tous les éléments de la div
+        if (window.scrollY > 100) { 
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+});
+</script>
 {% endblock %}
