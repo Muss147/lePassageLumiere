@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-<section id="carrousel" class="carrousel">
+<section id="accueil" class="carrousel">
     <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) top / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title pt-3">
@@ -57,7 +57,7 @@
     </div>
 </section>
 
-<section id="presentation-s1" class="s1-container" style="background-color: #F0F0F0;">
+<section id="presentation" class="s1-container" style="background-color: #F0F0F0;">
     <div class="container grid-container">
         <div class="presentation__text">
             <span class="title__prm">
@@ -163,7 +163,7 @@
 </section>
 
 <section id="presentation-s2" class="container grid-container">
-    <div class="s2-map column__left">
+    <div class="s2-map column__left d-none d-md-flex">
         <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400">
     </div>
     <div class="s2-text column__right">
@@ -205,6 +205,9 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="s2-map column__left d-block d-md-none">
+        <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400">
     </div>
 </section>
 
@@ -249,9 +252,9 @@
                 </svg>
             </span>
             <div class="presentation__text-div">
-                <table border="0">
+                <table border="0" class="triangle__dor">
                     <tr>
-                        <td rowspan="2" style="padding-right: 30px;">
+                        <td rowspan="2">
                             <span class="icones">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 50.758 51.79">
                                     <defs>
@@ -281,7 +284,7 @@
                         <td colspan="2" style="padding-bottom: 30px;">Depuis la rue Louis Lumière</td>
                     </tr>
                     <tr>
-                        <td rowspan="5" style="padding-right: 30px;">
+                        <td rowspan="5">
                             <span class="icones">
                                 <svg id="Groupe_992" data-name="Groupe 992" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 52.005 51.79">
                                     <defs>
@@ -314,7 +317,7 @@
                         <td style="padding-bottom: 30px;">1,2 km</td>
                     </tr>
                     <tr>
-                        <td rowspan="2" style="padding-right: 30px;">
+                        <td rowspan="2">
                             <span class="icones">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 51.757 51.79">
                                     <defs>
