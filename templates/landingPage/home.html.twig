@@ -194,9 +194,7 @@
 </section>
 
 <section id="presentation-s2" class="container grid-container">
-    <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 410px;">
-        {# <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400"> #}
-    </div>
+    <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 410px;"></div>
     <div class="s2-text column__right">
         <div class="">
             <span class="title__prm">
@@ -237,9 +235,7 @@
             </div>
         </div>
     </div>
-    <div class="s2-map column__left d-block d-md-none">
-        <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400">
-    </div>
+    <div id="map_mobile" class="s2-map column__left d-block d-md-none" style="height: 410px;"></div>
 </section>
 
 <section id="presentation-s3" class="container grid-container">
@@ -1239,7 +1235,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initialisation de la carte
-    var map = L.map('map').setView([5.302086811903862, -3.9946520641694776], 20);
+    var map = L.map('map').setView([5.302086811903862, -3.9946520641694776], 14);
+    if (window.innerWidth < 768) map = L.map('map_mobile').setView([5.302086811903862, -3.9946520641694776], 14);
+
     var markerIcon = L.icon({
         iconUrl: "{{asset('assets/medias/icones/pl_markerIcon.png')}}",
         // shadowUrl: "{{asset('assets/medias/icones/leaf-shadow.png')}}",

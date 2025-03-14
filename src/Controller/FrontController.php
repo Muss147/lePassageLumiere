@@ -21,12 +21,6 @@ final class FrontController extends AbstractController
         ]);
     }
 
-    #[Route('/test', name: 'test')]
-    public function test(): Response
-    {
-        return $this->render('landingPage/tester.html.twig');
-    }
-
     public function footer(): Response
     {
         return $this->render('landingPage/_footer.html.twig');
