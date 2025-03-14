@@ -10,10 +10,6 @@
         <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
         {% block stylesheets %}
         {% endblock %}
-
-        {% block javascripts %}
-            {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
-        {% endblock %}
     </head>
     <body>
         {{ render(controller('App\\Controller\\FrontController::header')) }}
@@ -23,5 +19,9 @@
         </main>
 
         {{ render(controller('App\\Controller\\FrontController::footer')) }}
+
+        {% block javascripts %}
+            {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
+        {% endblock %}
     </body>
 </html>

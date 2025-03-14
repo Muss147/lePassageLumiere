@@ -3,26 +3,57 @@
 {% block title %}Hello FrontController!{% endblock %}
 
 {% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
-    
 </style>
 {% endblock %}
 
 {% block body %}
+<section id="loader" class="loader d-flex-center" style="background: url({{asset('assets/medias/bg/loader.png')}}) center / cover no-repeat;">
+    <div data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="300">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 446.592 219.726">
+            <defs>
+                <clipPath id="clip-path">
+                <rect id="Rectangle_155" data-name="Rectangle 155" width="446.592" height="219.726" fill="none"/>
+                </clipPath>
+            </defs>
+            <g id="Groupe_241" data-name="Groupe 241" clip-path="url(#clip-path)">
+                <path id="Tracé_1131" data-name="Tracé 1131" d="M20.157,158.8H1.62v8.616H20.237c6.584,0,10.813,3.5,10.813,10,0,6.422-4.065,9.918-10.406,9.918H1.62v30H11.864v-21.38h8.293c13.005,0,21.217-6.667,21.217-18.536,0-11.951-8.212-18.615-21.217-18.615" transform="translate(-0.807 -79.136)" fill="#fff"/>
+                <path id="Tracé_1132" data-name="Tracé 1132" d="M543.494,157.017l-27.722,59.424H526.5l17.154-37.272,17.153,37.272H571.54l-27.722-59.424Z" transform="translate(-257.032 -78.248)" fill="#fff"/>
+                <path id="Tracé_1133" data-name="Tracé 1133" d="M141.634,157.017l-27.722,59.424h10.731L141.8,179.169l17.153,37.272H169.68l-27.722-59.424Z" transform="translate(-56.767 -78.248)" fill="#fff"/>
+                <path id="Tracé_1134" data-name="Tracé 1134" d="M296.71,201.323c0,3.171-2.52,5.284-6.665,6.259a17.335,17.335,0,0,1-3.322.547v9.179c12.483-.309,19.9-6.415,19.9-16.392,0-9.269-5.854-13.821-16.583-17.8-8.944-3.251-12.032-6.015-12.032-10.161,0-4.288,4.119-7,10.337-7.214V156.7c-11.833.024-20.335,6.2-20.335,16.419,0,9.512,5.69,14.064,16.42,17.885,8.943,3.17,12.275,5.69,12.275,10.324" transform="translate(-133.563 -78.088)" fill="#fff"/>
+                <path id="Tracé_1135" data-name="Tracé 1135" d="M416.92,207.58a15.1,15.1,0,0,1-1.938.392v9.293c11.654-.711,18.522-6.742,18.522-16.349,0-9.269-5.854-13.821-16.583-17.8-8.943-3.251-12.032-6.015-12.032-10.161,0-4.471,4.472-7.235,11.137-7.235.193,0,.388.018.583.021V156.73c-.437-.016-.873-.04-1.315-.04-11.867,0-20.4,6.18-20.4,16.421,0,9.512,5.689,14.064,16.42,17.885,8.942,3.171,12.274,5.69,12.274,10.325,0,3.171-2.519,5.284-6.665,6.259" transform="translate(-196.792 -78.086)" fill="#fff"/>
+                <path id="Tracé_1136" data-name="Tracé 1136" d="M695.334,217.335c7.074,0,14.552-1.789,19.593-4.472V189.858h-9.919v16.583a29.564,29.564,0,0,1-9.674,1.626c-12.438,0-20.892-9.1-20.892-21.054,0-11.789,8.292-20.892,21.3-20.892a39.589,39.589,0,0,1,17.561,4.226v-9.594a41.08,41.08,0,0,0-17.885-4.064c-18.046,0-31.216,13.088-31.216,30.323,0,17.314,13.008,30.322,31.135,30.322" transform="translate(-330.999 -78.086)" fill="#fff"/>
+                <path id="Tracé_1137" data-name="Tracé 1137" d="M858.071,208.711H836V191.883h22.076V183.51H836v-16.1h22.076V158.8h-32.32v58.531h32.32Z" transform="translate(-411.508 -79.136)" fill="#fff"/>
+                <path id="Tracé_1138" data-name="Tracé 1138" d="M35.684,49.912H11.864V0H1.62V58.53H35.684Z" transform="translate(-0.808 0)" fill="#fff"/>
+                <path id="Tracé_1139" data-name="Tracé 1139" d="M157.9,49.912H135.659V33.085H157.9V24.711H135.659V8.615H157.9V0H125.415V58.53H157.9Z" transform="translate(-62.5 0)" fill="#fff"/>
+                <path id="Tracé_1140" data-name="Tracé 1140" d="M10.244,319.218H0v58.531H34.064V369.13H10.244Z" transform="translate(0 -159.08)" fill="#fff"/>
+                <path id="Tracé_1141" data-name="Tracé 1141" d="M158.679,355.962c0,8.454-4.877,13.412-13.331,13.412-8.373,0-13.334-4.958-13.334-13.412V319.218H121.853v37.639c0,13.495,8.779,21.949,23.494,21.949,14.8,0,23.575-8.454,23.575-21.949V319.218H158.679Z" transform="translate(-60.725 -159.08)" fill="#fff"/>
+                <path id="Tracé_1142" data-name="Tracé 1142" d="M307.881,347.676l-27.233-30.24h-.163V376.86h9.837V340.848l2.276,2.276,15.282,17.641c5.122-5.854,10.244-11.706,15.283-17.641l2.358-2.276V376.86h9.755V317.436h-.162Z" transform="translate(-139.778 -158.192)" fill="#fff"/>
+                <rect id="Rectangle_154" data-name="Rectangle 154" width="10.244" height="58.531" transform="translate(229.067 160.137)" fill="#fff"/>
+                <path id="Tracé_1143" data-name="Tracé 1143" d="M543.8,377.749h32.323V369.13h-22.08V352.3h22.08V343.93h-22.08v-16.1h22.08v-8.616H543.8Z" transform="translate(-270.997 -159.08)" fill="#fff"/>
+                <path id="Tracé_1144" data-name="Tracé 1144" d="M722.905,337.833c0-11.951-8.373-18.615-21.624-18.615H681.526v58.531h10.082v-21.7H701.93l11.219,21.7h10.976l-12.764-23.414a16.847,16.847,0,0,0,11.543-16.5m-21.056,9.918H691.608V327.834h9.755c6.909,0,11.3,3.5,11.3,10,0,6.422-4.226,9.918-10.812,9.918" transform="translate(-339.634 -159.08)" fill="#fff"/>
+                <path id="Tracé_1145" data-name="Tracé 1145" d="M857.661,343.93H835.172v-16.1h22.488v-8.616H824.928v58.531h32.732V369.13H835.172V352.3H857.69V343.93Z" transform="translate(-411.097 -159.08)" fill="#fff"/>
+            </g>
+        </svg>
+    </div>
+</section>
+
 <section id="accueil" class="carrousel">
     <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed center / cover no-repeat;">
         <div class="container grid-container">
-            <div class="carrousel__title pt-3">
+            <div class="carrousel__title pt-3 toFade">
                 <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
                 <p>Livraison : 2<sup>e</sup> semestre 2025</p>
             </div>
             <div class="carrousel__form-div">
                 <div>
-                    <div class="d-flex-end d-sm-none mb-2">
+                    <div class="d-flex-end d-sm-none mb-2 toFade">
                         <span>Développé par</span>
                         <img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45">
                     </div>
-                    <form action="" method="post" class="carrousel__form w-sm-100">
+                    <form action="" method="post" class="carrousel__form w-sm-100 toFade">
                         <span class="carrousel__form-title _font-brother-1816">Nous vous répondons</span>
                         <div class="input-container">
                             <input type="text" required=""/>
@@ -163,8 +194,8 @@
 </section>
 
 <section id="presentation-s2" class="container grid-container">
-    <div class="s2-map column__left d-none d-md-flex">
-        <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400">
+    <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 410px;">
+        {# <img alt="marcory map" src="{{ asset('assets/medias/bg/zone4.png') }}" height="400"> #}
     </div>
     <div class="s2-text column__right">
         <div class="">
@@ -352,7 +383,7 @@
 </section>
 
 <section id="presentation-s4" class="">
-    <div class="container grid-container">
+    <div class="container grid-container" style="padding-bottom: 40px;">
         <div class="s4-text column__left">
             <div class="">
                 <span class="title__prm">
@@ -411,8 +442,8 @@
                 </div>
             </div>
         </div>
-        <div class="s4-map column__right" style="align-items: center">
-            <img alt="plan de masse" src="{{ asset('assets/medias/bg/planMasse.png') }}" height="400">
+        <div class="s4-map column__right" style="align-items: center; background-color: #ffffff">
+            <img alt="plan de masse" src="{{ asset('assets/medias/bg/planMasse.png') }}" height="auto">
         </div>
     </div>
 </section>
@@ -1149,11 +1180,32 @@
 
 
 {% block javascripts %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".header");
     const div = document.querySelector(".carrousel");
-    const divElemts = document.querySelector(".carrousel *");
+    const toFade = document.querySelectorAll(".toFade");
+
+    var map = L.map('map').setView([5.30192369071822, -3.9944655684821826], 13);
+
+    const accordeons = document.querySelectorAll('.accordeon');
+    accordeons.forEach(element => {
+        const button = element.querySelector('.accordeon-header');
+        
+        button.addEventListener('click', function() {
+            const isActive = element.classList.contains('active');
+
+            // Ferme tous les accordéons
+            accordeons.forEach(accordeon => accordeon.classList.remove('active'));
+
+            // Si ce n'était pas actif, on l'active
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        });
+    });
 
     window.addEventListener("scroll", function () {
         // Récupérer la position de défilement de la fenêtre
@@ -1165,7 +1217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity = Math.max(0, Math.min(1, opacity)); // Assurer une valeur entre 0 et 1
 
         // Appliquer l'opacité à tous les éléments de la div
-        divElemts.style.opacity = opacity;
+        toFade.forEach(elem => elem.style.opacity = opacity);
 
         // Appliquer l'opacité à tous les éléments de la div
         if (window.scrollY > 100) { 
@@ -1174,6 +1226,21 @@ document.addEventListener("DOMContentLoaded", function () {
             header.classList.remove("scrolled");
         }
     });
+
+    const loader = document.getElementById("loader");
+    // Assurez-vous que le loader existe avant d'appliquer les modifications
+    if (loader) {
+        setTimeout(() => {
+            loader.style.opacity = "0"; // Début du fade-out
+            loader.style.transition = "opacity 0.5s ease-out";
+
+            setTimeout(() => {
+                loader.style.display = "none"; // Supprime complètement après l'animation
+            }, 500); // Correspond à la durée de la transition CSS
+        }, 1500); // Délai minimal pour ne pas bloquer le chargement perçu
+    }
 });
+
+AOS.init();
 </script>
 {% endblock %}
