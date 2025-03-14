@@ -41,13 +41,13 @@
 </section>
 
 <section id="accueil" class="carrousel">
-    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed center / cover no-repeat;">
+    <div class="carrousel__div" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed center / cover no-repeat;">
         <div class="container grid-container">
-            <div class="carrousel__title pt-3 toFade">
+            <div class="carrousel__title pt-3 toFade" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
                 <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
                 <p>Livraison : 2<sup>e</sup> semestre 2025</p>
             </div>
-            <div class="carrousel__form-div">
+            <div class="carrousel__form-div" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="800">
                 <div>
                     <div class="d-flex-end d-sm-none mb-2 toFade">
                         <span>Développé par</span>
@@ -1188,8 +1188,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const div = document.querySelector(".carrousel");
     const toFade = document.querySelectorAll(".toFade");
 
-    var map = L.map('map').setView([5.30192369071822, -3.9944655684821826], 13);
-
     const accordeons = document.querySelectorAll('.accordeon');
     accordeons.forEach(element => {
         const button = element.querySelector('.accordeon-header');
@@ -1237,8 +1235,31 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 loader.style.display = "none"; // Supprime complètement après l'animation
             }, 500); // Correspond à la durée de la transition CSS
-        }, 1500); // Délai minimal pour ne pas bloquer le chargement perçu
+        }, 1400); // Délai minimal pour ne pas bloquer le chargement perçu
     }
+
+    // Initialisation de la carte
+    var map = L.map('map').setView([5.302086811903862, -3.9946520641694776], 20);
+    var markerIcon = L.icon({
+        iconUrl: "{{asset('assets/medias/icones/pl_markerIcon.png')}}",
+        // shadowUrl: "{{asset('assets/medias/icones/leaf-shadow.png')}}",
+
+        iconSize:     [65, 65], // size of the icon
+        // shadowSize:   [50, 64], // size of the shadow
+        iconAnchor:   [32, 65], // point of the icon which will correspond to marker's location
+        // shadowAnchor: [4, 62],  // the same for the shadow
+        // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    // Ajout de la couche de tuiles OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 18
+    }).addTo(map);
+    L.marker([5.302086811903862, -3.9946520641694776], {
+        alt: 'Le Passage Lumière',
+        icon: markerIcon
+    }).addTo(map).bindPopup('Le Passage Lumière, est là !');
 });
 
 AOS.init();
