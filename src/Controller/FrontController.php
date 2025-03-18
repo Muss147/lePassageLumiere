@@ -16,9 +16,7 @@ final class FrontController extends AbstractController
     #[Route('/', name: 'app_front')]
     public function index(): Response
     {
-        return $this->render('landingPage/home.html.twig', [
-            'controller_name' => 'FrontController',
-        ]);
+        return $this->render('landingPage/home.html.twig');
     }
 
     public function footer(): Response
