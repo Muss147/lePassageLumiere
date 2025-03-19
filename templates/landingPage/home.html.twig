@@ -56,26 +56,26 @@
                         <span>Développé par</span>
                         <a href="https://www.pfo-immobilier.com/" target="_blank"><img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45"></a>
                     </div>
-                    <form id="contactForm" action="" method="post" class="carrousel__form w-sm-100 toFade">
+                    {{ form_start(form, {'attr': {'id': 'contactForm', 'class': 'carrousel__form w-sm-100 toFade'}}) }}
                         <span class="carrousel__form-title _font-brother-1816">Nous vous répondons</span>
                         <div class="input-container">
-                            <input type="text" id="nomCommerce" name="nomCommerce"/>
+                            {{ form_widget(form.raison_sociale, {'attr': {'id': 'nomCommerce'}}) }}
                             <label>Nom du commerce</label>
                         </div>
                         <div class="input-container">
-                            <input type="text" id="nomPrenom" name="nomPrenom"/>
+                            {{ form_widget(form.nomprenoms, {'attr': {'id': 'nomPrenom'}}) }}
                             <label>Nom & Prénom</label>
                         </div>
                         <div class="input-container">
-                            <input type="text" id="email" name="email"/>
+                            {{ form_widget(form.email, {'attr': {'id': 'email'}}) }}
                             <label>Email</label>
                         </div>
                         <div class="input-container">
-                            <input type="text" id="telephone" name="telephone"/>
+                            {{ form_widget(form.telephone, {'attr': {'id': 'telephone'}}) }}
                             <label>Télephone</label>
                         </div>
                         <div class="input-container">
-                            <textarea rows="3" id="activite" name="activite"/></textarea>
+                            {{ form_widget(form.activite, {'attr': {'id': 'activite', 'rows': '3'}}) }}
                             <label>Quelle activité souhaitez-vous installer ?</label>
                         </div>
                         <div class="d-flex-center my-1">
@@ -85,6 +85,7 @@
                             demandées vous sera transmis dans les
                             meilleurs délais.</span>
                     </form>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
@@ -1343,45 +1344,30 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.className = "modal";
     }
 
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Empêche le rechargement de la page
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function(event) {
 
-        let nomCommerce = document.getElementById("nomCommerce").value.trim();
-        let nomPrenom = document.getElementById("nomPrenom").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let telephone = document.getElementById("telephone").value.trim();
-        let activite = document.getElementById("activite").value.trim();
+        let nomCommerce = document.getElementById("contacts_raison_sociale").value.trim();
+        let nomPrenom = document.getElementById("contacts_nomprenoms").value.trim();
+        let email = document.getElementById("contacts_email").value.trim();
+        let telephone = document.getElementById("contacts_telephone").value.trim();
+        let activite = document.getElementById("contacts_activite").value.trim();
 
         if (!nomCommerce || !nomPrenom || !email || !telephone || !activite) {
+            event.preventDefault(); // Empêche le rechargement de la page
             showModal("Tous les champs sont obligatoires.", "error");
             return;
         }
-
-        let formData = new FormData();
-        formData.append("nomCommerce", nomCommerce);
-        formData.append("nomPrenom", nomPrenom);
-        formData.append("email", email);
-        formData.append("telephone", telephone);
-        formData.append("activite", activite);
-
-        fetch("traitement.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showModal("Formulaire soumis avec succès!", "success");
-                document.getElementById("contactForm").reset();
-            } else {
-                showModal("Erreur lors de la soumission!", "error");
-            }
-        })
-        .catch(error => {
-            showModal("Problème de connexion, veuillez réessayer.", "error");
-        });
+        else form.submit();
+        // showModal("Formulaire soumis avec succès!", "success");
+        // form.reset();
     });
 });
+
+{% dump(app.flashes) %}
+{% for message in app.flashes('success') %}
+showModal("{{message}}", "success");
+{% endfor %}
 
 AOS.init();
 </script>

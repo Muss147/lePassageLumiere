@@ -5,14 +5,14 @@
             <img class="logo__img img__blk" src="{{ asset('assets/medias/logos/logoPL.png') }}" alt="LPL" height="30px">
         </a>
         <div class="navbar__div">
-            <ul>
+            <ul class="navbar__menu">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#presentation">Présentation</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
         <div class="mobil__menu">
-            <button class="btn">
+            <button class="btn btn__menu" onclick="document.querySelector('.header').classList.toggle('is-menuDisplayed')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
             </button>
         </div>
