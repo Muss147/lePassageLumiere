@@ -25,8 +25,8 @@ final class FrontController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $contact->updatedTimestamps();
             $manager->persist($contact);
-            dd($contact);
             $manager->flush();
 
             $this->addFlash('success', 'Le formulaire a été soumis avec succès !');

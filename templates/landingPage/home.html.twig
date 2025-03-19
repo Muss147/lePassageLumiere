@@ -44,7 +44,8 @@
 </section>
 
 <section id="accueil" class="carrousel">
-    <div class="carrousel__div" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed bottom / cover no-repeat;">
+    <!-- data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" -->
+    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed bottom / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title pt-3 toFade" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
                 <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
@@ -84,7 +85,6 @@
                         <span class="carrousel__form-desc">Un e-mail incluant les tarifications de location
                             demandées vous sera transmis dans les
                             meilleurs délais.</span>
-                    </form>
                     {{ form_end(form) }}
                 </div>
             </div>
@@ -1251,9 +1251,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector(".header");
-    const div = document.querySelector(".carrousel");
-    const toFade = document.querySelectorAll(".toFade");
 
     const accordeons = document.querySelectorAll('.accordeon');
     accordeons.forEach(element => {
@@ -1272,13 +1269,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    const header = document.querySelector(".header");
+    const div = document.querySelector(".carrousel");
+    const toFade = document.querySelectorAll(".toFade");
     window.addEventListener("scroll", function () {
         // Récupérer la position de défilement de la fenêtre
         let scrollTop = window.scrollY;
         let divHeight = div.offsetHeight;
         
         // Calcul de l'opacité (0 à 1)
-        let opacity = 1 - (scrollTop / divHeight);
+        let opacity = 1 - ((scrollTop / divHeight) * 1.5);
         opacity = Math.max(0, Math.min(1, opacity)); // Assurer une valeur entre 0 et 1
 
         // Appliquer l'opacité à tous les éléments de la div
@@ -1359,15 +1359,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         else form.submit();
-        // showModal("Formulaire soumis avec succès!", "success");
-        // form.reset();
     });
-});
+    
+    {% for message in app.flashes('success') %}
+    showModal("{{message}}", "success");
+    {% endfor %}
 
-{% dump(app.flashes) %}
-{% for message in app.flashes('success') %}
-showModal("{{message}}", "success");
-{% endfor %}
+});
 
 AOS.init();
 </script>

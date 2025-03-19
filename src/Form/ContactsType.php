@@ -16,25 +16,25 @@ class ContactsType extends AbstractType
         $builder
             ->add('raison_sociale', TextType::class, [
                 'label' => false,  // Cette ligne supprime le label
-                'required' => false,
+                // 'required' => false,
             ])
             ->add('nomprenoms', TextType::class, [
                 'label' => false,
-                'required' => false,
+                // 'required' => false,
             ])
             ->add('email', TextType::class, [
                 'label' => false,
-                'required' => false,
+                // 'required' => false,
             ])
             ->add('telephone', TextType::class, [
                 'label' => false,
-                'required' => false,
+                // 'required' => false,
             ])
             // ->add('service')
             // ->add('site')
             ->add('activite', TextareaType::class, [
                 'label' => false,
-                'required' => false,
+                // 'required' => false,
             ])
             // ->add('createdAt', null, [
             //     'widget' => 'single_text',
