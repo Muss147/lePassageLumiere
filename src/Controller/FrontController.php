@@ -25,11 +25,12 @@ final class FrontController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $contact->updatedTimestamps();
+            $contact->setSite('Le passage lumière')->updatedTimestamps();
             $manager->persist($contact);
             $manager->flush();
 
             $this->addFlash('success', 'Le formulaire a été soumis avec succès !');
+            return $this->redirectToRoute('app_front');
         }
         return $this->render('landingPage/home.html.twig', [
             'form' => $form

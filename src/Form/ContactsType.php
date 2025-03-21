@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactsType extends AbstractType
@@ -22,12 +23,16 @@ class ContactsType extends AbstractType
                 'label' => false,
                 // 'required' => false,
             ])
-            ->add('email', TextType::class, [
+            ->add('email', EmailType::class, [
                 'label' => false,
                 // 'required' => false,
             ])
             ->add('telephone', TextType::class, [
                 'label' => false,
+                'attr' => [
+                    // 'placeholder' => 'Téléphone',
+                    'onkeypress' => 'return event.charCode>=48 && event.charCode<=57' // Empêche les lettres
+                ]
                 // 'required' => false,
             ])
             // ->add('service')
