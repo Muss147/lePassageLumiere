@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block body %}
-<section id="loader" class="loader d-flex-center" style="background: url({{asset('assets/medias/bg/loader.png')}}) center / cover no-repeat;">
+<section id="loader" class="loader d-flex-center" style="background: url({{asset('assets/medias/bg/loader.webp')}}) center / cover no-repeat;">
     <div data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="300">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 446.592 219.726">
             <defs>
@@ -45,7 +45,7 @@
 
 <section id="accueil" class="carrousel">
     <!-- data-aos="zoom-in" data-aos-delay="700" data-aos-duration="700" -->
-    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.png')}}) fixed bottom / cover no-repeat;">
+    <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.webp')}}) fixed bottom / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title pt-3 toFade" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
                 <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
@@ -198,7 +198,7 @@
 
 <section id="presentation-s2" class="container grid-container">
     <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 410px;"></div>
-    {# <div class="s2-map column__left d-none d-md-flex" style="height: 100%;">
+    {# <div class="s2-map column__left d-none d-md-flex" style="min-height: 300px;">
         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d993.1956386026519!2d-3.9856177304193476!3d5.29659239966761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnNDcuNyJOIDPCsDU5JzA1LjkiVw!5e0!3m2!1sfr!2sci!4v1742560341104!5m2!1sfr!2sci" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div> #}
     <div class="s2-text column__right">
@@ -242,6 +242,9 @@
         </div>
     </div>
     <div id="map_mobile" class="s2-map column__left d-block d-md-none" style="height: 410px;"></div>
+    {# <div class="s2-map column__left d-block d-md-none" style="min-height: 300px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d993.1956386026519!2d-3.9856177304193476!3d5.29659239966761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnNDcuNyJOIDPCsDU5JzA1LjkiVw!5e0!3m2!1sfr!2sci!4v1742560341104!5m2!1sfr!2sci" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div> #}
 </section>
 
 <section id="presentation-s3" class="container grid-container">
@@ -380,7 +383,7 @@
         </div>
     </div>
     <div class="s3-map column__right">
-        <img alt="carte marcory" src="{{ asset('assets/medias/bg/marcory.png') }}" height="320">
+        <img alt="carte marcory" src="{{ asset('assets/medias/bg/marcory.webp') }}" height="320">
     </div>
 </section>
 
@@ -445,7 +448,7 @@
             </div>
         </div>
         <div class="s4-map column__right" style="align-items: center; background-color: #ffffff">
-            <img alt="plan de masse" src="{{ asset('assets/medias/bg/planMasse.png') }}" height="auto">
+            <img alt="plan de masse" src="{{ asset('assets/medias/bg/planMasse.webp') }}" height="auto">
         </div>
     </div>
 </section>
@@ -788,7 +791,7 @@
             </div>
         </div>
         <div class="la__coursive-image">
-            <img alt="la coursive" src="{{ asset('assets/medias/bg/leCoursive.png') }}" height="">
+            <img alt="la coursive" src="{{ asset('assets/medias/bg/leCoursive.webp') }}" height="">
         </div>
     </div>
 </section>
@@ -1225,12 +1228,12 @@
             </div>
         </div>
         <div class="s4-map column__right" style="align-items: center">
-            <img alt="A propos de PFO" src="{{ asset('assets/medias/bg/aboutPFO.png') }}" height="400">
+            <img alt="A propos de PFO" src="{{ asset('assets/medias/bg/aboutPFO.webp') }}" height="400">
         </div>
     </div>
 </section>
 
-<section id="contact" class="contact" style="background: url({{asset('assets/medias/bg/loader.png')}}) fixed center / cover no-repeat;">
+<section id="contact" class="contact" style="background: url({{asset('assets/medias/bg/loader.webp')}}) fixed center / cover no-repeat;">
     <div class="container d-flex-center">
         <div class="contact__text">
             <p>Nous sommes à votre écoute.</p>
@@ -1339,7 +1342,7 @@ document.addEventListener("DOMContentLoaded", function () {
     L.marker([5.296592392673111, -3.984974034738098], {
         alt: 'Le Passage Lumière',
         icon: markerIcon
-    }).addTo(map).bindPopup('Le Passage Lumière, est là ! <br><a href="https://maps.app.goo.gl/TSonjbucLwGAV36x6">Google maps</a>');
+    }).addTo(map).bindPopup('Le Passage Lumière, est là ! <br><a target="_blank" href="https://maps.app.goo.gl/TSonjbucLwGAV36x6">Google maps</a>');
 
     // MODAL script
     function showModal(message, type) {

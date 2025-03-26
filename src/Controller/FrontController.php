@@ -20,21 +20,7 @@ final class FrontController extends AbstractController
     #[Route('/', name: 'app_front')]
     public function index(Request $request, EntityManagerInterface $manager): Response
     {
-        $contact = new Contacts();
-        $form = $this->createForm(ContactsType::class, $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $contact->setSite('Le passage lumière')->updatedTimestamps();
-            $manager->persist($contact);
-            $manager->flush();
-
-            $this->addFlash('success', 'Le formulaire a été soumis avec succès !');
-            return $this->redirectToRoute('app_front');
-        }
-        return $this->render('landingPage/home.html.twig', [
-            'form' => $form
-        ]);
+        return $this->render('landingPage/home.html.twig');
     }
 
     public function footer(): Response
