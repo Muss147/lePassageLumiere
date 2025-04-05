@@ -48,12 +48,12 @@
     <div class="carrousel__div" style="background: url({{asset('assets/medias/bg/homeCover.webp')}}) fixed bottom / cover no-repeat;">
         <div class="container grid-container">
             <div class="carrousel__title pt-3 toFade" data-aos="fade-right" data-aos-delay="1500" data-aos-duration="800">
-                <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de Zone 4</span></h1>
+                <h1><span class="fw-300">Des </span>commerces <br><span class="fw-300">en plein coeur de <span style="white-space: nowrap;">Zone 4</span></span></h1>
                 <p style="font-weight: 500;">Livraison : 2<sup>e</sup> semestre 2025</p>
             </div>
             <div class="carrousel__form-div" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="800">
                 <div>
-                    <div class="d-flex-end d-sm-none mb-2 toFade">
+                    <div class="d-flex-end d-sm-none mb-1 toFade">
                         <span>Développé par</span>
                         <a href="https://www.pfo-immobilier.com/" target="_blank"><img src="{{ asset('assets/medias/logos/logoPFO_white.png') }}" alt="PFO" height="45"></a>
                     </div>
@@ -137,7 +137,7 @@
             </span>
             <div class="presentation__text-div">
                 <div class="d-flex gap-2 mb-2">
-                    <span class="icones d-flex gap-1">
+                    <span class="icones d-flex gap-1" style="flex: 0 0 50%;">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 49.175 49.104">
                             <defs>
                                 <clipPath id="clip-path">
@@ -197,7 +197,7 @@
 </section>
 
 <section id="presentation-s2" class="container grid-container">
-    <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 410px;"></div>
+    <div id="map" class="s2-map column__left d-none d-md-flex" style="height: 445px;"></div>
     {# <div class="s2-map column__left d-none d-md-flex" style="min-height: 300px;">
         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d993.1956386026519!2d-3.9856177304193476!3d5.29659239966761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMTcnNDcuNyJOIDPCsDU5JzA1LjkiVw!5e0!3m2!1sfr!2sci!4v1742560341104!5m2!1sfr!2sci" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div> #}
@@ -233,10 +233,10 @@
                     Le Passage Lumière est un projet unique par son identité, véritable écrin de nature en <b>plein cœur d’un quartier historique</b> où se mêlent industries, commerces et résidentiels.</p>
 
                 <ul class="custom-list grid">
-                    <li>Une attractivité exceptionnelle</li>
-                    <li>Un flux continu</li>
-                    <li>Une affluence constante</li>
-                    <li>À proximité des centres commerciaux dans la zone</li>
+                    <li>Une attractivité exceptionnelle,</li>
+                    <li>À proximité des centres commerciaux dans la zone,</li>
+                    <li>Une affluence constante,</li>
+                    <li>Un flux continu.</li>
                 </ul>
             </div>
         </div>
@@ -857,7 +857,7 @@
         </span>
     </div>
 
-    <div class="accordeon-wrapper">
+    <div class="accordeon-wrapper d-none d-md-flex">
         <div class="accordeon active mb-3">
             <div class="accordeon-header">
                 <h3>Général</h3>
@@ -1177,6 +1177,10 @@
             </div>
         </div>
     </div>
+
+    <div class="d-flex-center d-md-none">
+        <a href="{{asset('assets/docs/Fiche_Technique_Le_Passage_Lumiere.pdf')}}" target="_blank" class="btn btn__prm" download>Télécharger la liste</a>
+    </div>
 </section>
 
 <section id="aboutPfo" class="aboutPfo">
@@ -1215,7 +1219,7 @@
                     </svg>
                 </span>
                 <div class="presentation__text-div">
-                    <p><b>PFO Immobilier</b>, fondée en 2019, est une <b>filiale du groupe PFO Africa Spécialisée dans des projets immobiliers</b> à forte valeur ajoutée.</p>
+                    <p><b>PFO Immobilier</b>, fondée en 2019, est une <b>filiale du groupe PFO Africa spécialisée dans des projets immobiliers</b> à forte valeur ajoutée.</p>
 
                     <p><b>PFO Immobilier développe et gère</b> un portefeuille d’actifs immobiliers multisectoriel allant des bureaux et commerces à l’hôtellerie, l’industrie et le résidentiel.</p>
                         
@@ -1264,149 +1268,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function () {
-
-    const accordeons = document.querySelectorAll('.accordeon');
-    accordeons.forEach(element => {
-        const button = element.querySelector('.accordeon-header');
-        
-        button.addEventListener('click', function() {
-            const isActive = element.classList.contains('active');
-
-            // Ferme tous les accordéons
-            accordeons.forEach(accordeon => accordeon.classList.remove('active'));
-
-            // Si ce n'était pas actif, on l'active
-            if (!isActive) {
-                element.classList.add('active');
-            }
-        });
-    });
-
-    const header = document.querySelector(".header");
-    const div = document.querySelector(".carrousel");
-    const toFade = document.querySelectorAll(".toFade");
-    window.addEventListener("scroll", function () {
-        // Récupérer la position de défilement de la fenêtre
-        let scrollTop = window.scrollY;
-        let divHeight = div.offsetHeight;
-        
-        // Calcul de l'opacité (0 à 1)
-        let opacity = 1 - ((scrollTop / divHeight) * 1.5);
-        opacity = Math.max(0, Math.min(1, opacity)); // Assurer une valeur entre 0 et 1
-
-        // Appliquer l'opacité à tous les éléments de la div
-        if (window.innerWidth > 768) toFade.forEach(elem => elem.style.opacity = opacity);
-
-        // Appliquer l'opacité à tous les éléments de la div
-        if (window.scrollY > 100) { 
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-
-    const loader = document.getElementById("loader");
-    // Assurez-vous que le loader existe avant d'appliquer les modifications
-    if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = "0"; // Début du fade-out
-            loader.style.transition = "opacity 0.5s ease-out";
-
-            setTimeout(() => {
-                loader.style.display = "none"; // Supprime complètement après l'animation
-            }, 500); // Correspond à la durée de la transition CSS
-        }, 1400); // Délai minimal pour ne pas bloquer le chargement perçu
-    }
-
-    // Initialisation de la carte
-    var map = L.map('map').setView([5.296592392673111, -3.984974034738098], 14);
-    if (window.innerWidth < 768) map = L.map('map_mobile').setView([5.296592392673111, -3.984974034738098], 14);
-
-    var markerIcon = L.icon({
-        iconUrl: "{{asset('assets/medias/icones/pl_markerIcon.png')}}",
-        // shadowUrl: "{{asset('assets/medias/icones/leaf-shadow.png')}}",
-
-        iconSize:     [65, 65], // size of the icon
-        // shadowSize:   [50, 64], // size of the shadow
-        iconAnchor:   [32, 65], // point of the icon which will correspond to marker's location
-        // shadowAnchor: [4, 62],  // the same for the shadow
-        // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-
-    // Ajout de la couche de tuiles OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
-        maxZoom: 18
-    }).addTo(map);
-    L.marker([5.296592392673111, -3.984974034738098], {
-        alt: 'Le Passage Lumière',
-        icon: markerIcon
-    }).addTo(map).bindPopup('Le Passage Lumière, est là ! <br><a target="_blank" href="https://maps.app.goo.gl/TSonjbucLwGAV36x6">Google maps</a>');
-
-    // MODAL script
-    function showModal(message, type) {
-        const modal = document.getElementById("modal");
-        const messageContainer = document.getElementById("modal-message");
-        messageContainer.textContent = message;
-        modal.className = `modal show ${type}`;
-        setTimeout(closeModal, 4000); // Fermeture automatique après 3 sec
-    }
-
-    function closeModal() {
-        const modal = document.getElementById("modal");
-        modal.className = "modal";
-    }
-    document.querySelector('.close-btn').addEventListener('click', closeModal)
-
-    $("#contactForm").on("submit", function (event) {
-        event.preventDefault(); // Empêche la soumission classique
-
-        // Récupération des valeurs et suppression des espaces inutiles
-        let nomEntreprise = $("#nomEntreprise").val().trim();
-        let nomPrenom = $("#nomPrenom").val().trim();
-        let email = $("#email").val().trim();
-        let telephone = $("#telephone").val().trim();
-        let activite = $("#activite").val().trim();
-
-        // Vérification des champs obligatoires
-        if (!nomEntreprise || !nomPrenom || !email || !telephone || !activite) {
-            showModal("Tous les champs sont obligatoires.", "error");
-            return;
-        }
-
-        // Affichage du loader
-        $("#f_loader").show();
-
-        let formData = {};
-        $(this).serializeArray().forEach(field => {
-            formData[field.name] = field.value;
-        });
-
-        $.ajax({
-            url: "https://www.lebadamier.com/api/set-contact", // L'URL de l'API Symfony
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(formData),
-            dataType: "json",
-            success: function (response) {
-                $("#f_loader").hide(); // Masquer le loader après la réponse
-                if (response.success) {
-                    showModal(response.message, "success");
-                    $("#contactForm")[0].reset(); // Réinitialise le formulaire après succès
-                } else {
-                    showModal("Erreur : " + response.errors.join('\n'), "error");
-                }
-            },
-            error: function (xhr) {
-                $("#f_loader").hide(); // Masquer le loader après la réponse
-                showModal("Erreur de connexion avec le serveur ! \n" + xhr.responseText, "error");
-            }
-        });
-    });
-
-});
-
 AOS.init();
 </script>
 {% endblock %}
